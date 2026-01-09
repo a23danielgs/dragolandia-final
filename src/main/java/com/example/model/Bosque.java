@@ -66,8 +66,6 @@ public class Bosque {
         this.nivelPeligro = nivelPeligro;
         this.monstruoJefe = monstruoJefe;
         this.monstruos = monstruos;
-        monstruos.add(monstruoJefe);
-        System.out.println("BOSQUE===>"+monstruos);
     }
 
     /**

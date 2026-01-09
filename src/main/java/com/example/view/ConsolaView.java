@@ -35,10 +35,10 @@ public class ConsolaView {
         String nombre = sc.nextLine();
         System.out.println("Cuantos puntos de salud tendrá "+nombre+"?");
         Integer vida = sc.nextInt();
-        sc.nextLine();
+        
         System.out.println("Cual será el nivel de magia de "+nombre+"?");
         Integer nivelMagia = sc.nextInt();
-        sc.nextLine();
+        
 
 
         Mago mago = new Mago(nombre,vida,nivelMagia);
@@ -50,7 +50,7 @@ public class ConsolaView {
             System.out.println("Que hechizo quieres añadirle al mago?");
             System.out.println("[1.(Bola de fuego)\n2.(Rayo),\n3.(Bola de nieve),\n4.(Cura)]");
             Integer opcInteger = sc.nextInt();
-            sc.next();
+            sc.nextLine();
             switch (opcInteger) {
                 case 1:
                     conjuros.add(new Hechizo("Bola de fuego",mago));
@@ -70,8 +70,8 @@ public class ConsolaView {
             if (conjuros.size()>=2) {
                 System.out.println("Quieres añadir otro hechizo?");
                 System.out.println(" S / N ");
-                String respuesta = sc.next();
-                if (respuesta.equals("S")) {
+                String respuesta = sc.nextLine();
+                if (respuesta.equals("N")) {
                     salir = true;
                 }
             }
@@ -137,7 +137,8 @@ public class ConsolaView {
 
         System.out.println("Cual es la resistencia de "+nombre);
         Integer resistencia = sc.nextInt();
-        sc.next();
+        sc.nextLine();
+
         Dragon dragon = new Dragon(nombre,intensidadFuego,resistencia,bosque);
         /**
          * Se añade el Dragon() a su respectiva tabla en la base de datos
@@ -174,7 +175,29 @@ public class ConsolaView {
      * @param mago El mago que esta atacando
      * @param monstruo El monstruo que esta recibiendo daño
      */
-    public void imprimirTurnoMago(Mago mago,Monstruo monstruo){
+    public void imprimirTurnoMago(Mago mago,Monstruo monstruo,String hechizo){
+        /**
+         * if para controlar que el monstruo no tenga vida negativa
+         */
+        if (monstruo.getVida()<0) {
+            monstruo.setVida(0);
+        }
+        if (!hechizo.equals("cura")) {
+            System.out.println("El mago "+mago.getNombre()+" ataca a "+monstruo.getNombre()+" con su poder de "+mago.getNivelMagia()+" ("+hechizo+")");
+            System.out.println("*EXPLOSIÓN*");
+            System.out.println("A "+monstruo.getNombre()+" le quedan "+monstruo.getVida()+" puntos de vida");
+        }else{
+            System.out.println("El mago "+mago.getNombre()+" usa ("+hechizo+")");
+            System.out.println("El mago se cura y ahora tiene "+mago.getVida()+" puntos de vida");
+        }
+
+    }
+
+    public void imprimirTurnoMagoFallo(Mago mago){
+        System.out.println("Ostras que malo! El mago ha fallado se hace 1 punto de daño!!");
+    }
+
+    public void imprimirTurnoMagoBasico(Mago mago,Monstruo monstruo){
         System.out.println("El mago "+mago.getNombre()+" ataca a "+monstruo.getNombre()+" con su poder de "+mago.getNivelMagia());
         System.out.println("*EXPLOSIÓN*");
         /**
@@ -185,16 +208,6 @@ public class ConsolaView {
         }
         System.out.println("A "+monstruo.getNombre()+" le quedan "+monstruo.getVida()+" puntos de vida");
     }
-
-    public void imprimirTurnoMagoConHechizo(Mago mago,Monstruo monstruo,Hechizo hechizo){
-        System.out.println("El mago lanza "+hechizo+" !!!");
-        if (!hechizo.getTipo().equals("cura")) {
-            System.out.println("A "+monstruo.getNombre()+" le quedan "+monstruo.getVida()+" puntos de vida");
-        }else{
-            System.out.println("El mago se cura y ahora tiene "+mago.getVida()+" puntos de vida");
-        }
-    }
-
 
     /**
      * Función que imprime por pantalla el turno en el que el monstruo ataca 
@@ -225,6 +238,6 @@ public class ConsolaView {
      * @param ganador el es nombre del mago o monstruo que ganó la batalla
      */
     public void imprimirGanador(String ganador) {
-        System.out.println("El ganador es "+ganador+"!!!");
+        System.out.println("El ganador son "+ganador+"!!!");
     }
 }

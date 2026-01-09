@@ -153,11 +153,8 @@ public class Hechizo {
                 }
                 break;
             case "bola de nieve":
-                /**
-                 * Congela al primer monstruo de la lista
-                 */
-                for (int i = 0; i < 1; i++) {
-                    monstruos.get(i).setCongelado(true);
+                for (Monstruo monstruo : monstruos) {
+                    monstruo.setCongelado(true);
                 }
                 break;
             case "rayo":

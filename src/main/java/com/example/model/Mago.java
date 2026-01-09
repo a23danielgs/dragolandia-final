@@ -164,17 +164,16 @@ public class Mago {
      * @param m monstruo objetivo
      * @param hechizo hechizo a lanzar
      */
-    public void lanzarHechizo(Monstruo m, Hechizo hechizo){
-        conjuros.forEach(
-            conjuro -> {
-                if (conjuro.getTipo()==hechizo.getTipo()) {
-                    hechizo.efecto(m);
-                    conjuros.remove(hechizo);
-                    return;
-                }
-            } 
-        );
+    public boolean lanzarHechizo(Monstruo m, String hechizo){
+        for (Hechizo conjuro : conjuros) {
+            if (conjuro.getTipo() == hechizo) {
+                conjuro.efecto(m);
+                conjuros.remove(conjuro);
+                return false; 
+            }
+        }
         setVida(getVida() - 1);
+        return true;
     }
 
     /**
@@ -183,17 +182,16 @@ public class Mago {
      * @param m lista de monstruos afectados
      * @param hechizo hechizo de área
      */
-    public void lanzarHechizo(List<Monstruo> m, Hechizo hechizo){
-        conjuros.forEach(
-            conjuro -> {
-                if (conjuro.getTipo()==hechizo.getTipo()) {
-                    hechizo.efectoArea(m);
-                    conjuros.remove(hechizo);
-                    return;
-                }
-            } 
-        );
+    public boolean lanzarHechizo(List<Monstruo> m, String hechizo){
+        for (Hechizo conjuro : conjuros) {
+            if (conjuro.getTipo().equals(hechizo)) {
+                conjuro.efectoArea(m);
+                conjuros.remove(conjuro);
+                return false; 
+            }
+        }
         setVida(getVida() - 1);
+        return true;
     }
     /**
      * Devuelve una representación en texto de un mago
