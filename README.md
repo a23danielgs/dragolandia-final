@@ -23,4 +23,8 @@ El siguiente diagrama muestra la **estructura de clases del proyecto**, incluyen
 ### Entidad-Relación
 ![Entidad relación](img/EntidadRelacion.svg)
 
+## Futuras ampliaciones
+- Añadir un menú para poder seleccionar a monstruos y magos preexistentes en la base de datos para que puedan volver a combatir
+- Guardar en la base de datos información sobre los combates realizados
+
 ## [Manual De Usuario](ManualUsuario.md)
