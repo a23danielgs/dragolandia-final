@@ -25,6 +25,7 @@ public class BattleController {
      * Controlador de base de datos para actualizar hechizos
      */
     MagoRepository MR = new MagoRepository();
+    MonstruoRepository MoR = new MonstruoRepository();
 
     Boolean batalla = true;
 
@@ -183,6 +184,14 @@ public class BattleController {
                 batalla = false;
             }
 
+            // MR.updateMago(mago1);
+            // MR.updateMago(mago2);
+            // bosque.getMonstruos().forEach(
+            //         monstruo -> {
+            //             MoR.updateMonstruo(monstruo);
+            //         }
+            // );
+            
             System.out.println("\n");
 
         } while (batalla == true);
@@ -200,6 +209,8 @@ public class BattleController {
 
         // Mostrar el ganador en consola
         CV.imprimirGanador(ganador);
+
+
     }
 
     public void comprobarJefe(Bosque bosque) {
