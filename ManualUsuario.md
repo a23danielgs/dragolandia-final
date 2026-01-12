@@ -1,11 +1,15 @@
 La aplicación comenzará preguntando por todos los datos necesarios previos a comenzar una batalla:
 - 3 Monstruos (Nombre y tipo)
+  
   ![Creación monstruo](img/monstruo.png)
 - Bosque (Nombre y Nivel de peligro)
+  
   ![Creación bosque](img/bosque.png)
 - Dragon (Nombre, Intensidad de fuego y Resistencia)
+  
   ![Creación dragon](img/dragon.png)
 - 2 Magos (Nombre, Salud, Nivel de magia y Hechizos)
+  
   ![Creación mago](img/mago.png)
 Para añadirle los hechizos de los magos se seleccionara un mínimo de 2 hechizos de una lista de 4, para seguir añadiendo hechizos a partir del segundo habrá que seleccionar la opción S y para acabar de añadir habrá que seleccionar N
 
