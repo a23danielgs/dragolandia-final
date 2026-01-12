@@ -17,8 +17,10 @@ Se definieron también las relaciones entre estas entidades, como jefe del bosqu
 ## Diagrama de clases
 El siguiente diagrama muestra la **estructura de clases del proyecto**, incluyendo atributos y relaciones principales:
 
-![Diagrama de clases](DiagramaClases.svg)
+![Diagrama de clases](img/DiagramaClases.svg)
 
 ## Diseño
 ### Entidad-Relación
-![Entidad relación](EntidadRelacion.svg)
+![Entidad relación](img/EntidadRelacion.svg)
+
+## [Manual De Usuario](ManualUsuario.md)
