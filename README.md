@@ -31,3 +31,6 @@ El siguiente diagrama muestra la **estructura de clases del proyecto**, incluyen
 
 ## Tablas
 📄 **[Ver PDF de las tablas](Dragolandia%20hibernate.pdf)**
+
+## Anotaciones
+La aplicación no esta usando Entity Manager, pero esta preparada la clase EMFactory, solo habría que cambiar el hibernate.cfg.xml y adaptar las clases Repository. Pero no me di cuenta que no lo había cambiado hasta muy tarde.
