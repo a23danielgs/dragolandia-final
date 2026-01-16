@@ -30,4 +30,4 @@ El siguiente diagrama muestra la **estructura de clases del proyecto**, incluyen
 ## [Manual De Usuario](ManualUsuario.md)
 
 ## Tablas
-📄 **[Ver PDF de las tablas](Dragolandia-hibernate.pdf)**
+📄 **[Ver PDF de las tablas](Dragolandia%20hibernate.pdf)**
