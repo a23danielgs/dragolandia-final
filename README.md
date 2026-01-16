@@ -28,3 +28,6 @@ El siguiente diagrama muestra la **estructura de clases del proyecto**, incluyen
 - Guardar en la base de datos información sobre los combates realizados
 
 ## [Manual De Usuario](ManualUsuario.md)
+
+## Tablas
+📄 **[Ver PDF de las tablas](Dragolandia-hibernate.pdf)**
